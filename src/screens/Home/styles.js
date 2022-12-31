@@ -46,6 +46,6 @@ export default StyleSheet.create({
   titleWrapper: {
     alignItems: 'center',
     marginBottom: 16,
-    marginTop: 86,
+    marginTop: '5%',
   },
 });

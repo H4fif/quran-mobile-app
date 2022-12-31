@@ -4,7 +4,7 @@ import { images } from '../../constants';
 import styles from './styles';
 
 const Home = ({ navigation }) => {
-  const redirect = () => navigation.navigate('Dashboard');
+  const redirect = () => navigation.replace('MainApp');
 
   return (
     <SafeAreaView style={styles.container}>
