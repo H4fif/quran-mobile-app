@@ -7,6 +7,7 @@ export const COLORS = {
   primary: '#672CBC',
   gray: '#8789A3',
   orange: '#F9B091',
+  orangeFocus: '#e09e82',
 };
 
 export const SIZES = {
