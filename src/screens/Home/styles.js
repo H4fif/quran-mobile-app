@@ -11,14 +11,14 @@ export default StyleSheet.create({
     marginTop: 49,
     marginHorizontal: '8%',
   },
-  button: {
-    backgroundColor: COLORS.orange,
+  button: ({ pressed }) => ({
+    backgroundColor: pressed ? COLORS.orangeFocus : COLORS.orange,
     borderRadius: 30,
     paddingVertical: 17,
     paddingHorizontal: 40,
     position: 'absolute',
     bottom: -30,
-  },
+  }),
   buttonLabel: {
     color: COLORS.white,
     fontWeight: '600',
