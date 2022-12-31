@@ -1,15 +1,11 @@
-import {
-  Image,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, Pressable, SafeAreaView, Text, View } from 'react-native';
 import React from 'react';
 import { images } from '../../constants';
 import styles from './styles';
 
-const Home = () => {
+const Home = ({ navigation }) => {
+  const redirect = () => navigation.navigate('Dashboard');
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleWrapper}>
@@ -31,9 +27,9 @@ const Home = () => {
           resizeMode="cover"
         />
 
-        <TouchableOpacity style={styles.button}>
+        <Pressable style={style => styles.button(style)} onPress={redirect}>
           <Text style={styles.buttonLabel}>Get Started</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
