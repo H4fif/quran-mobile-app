@@ -1,6 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Dashboard, Home } from '../screens';
+import { Bookmark, Dashboard, Home } from '../screens';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomTabNavigator } from '../components';
 import { Text } from 'react-native';
@@ -14,16 +14,13 @@ const MainApp = () => {
       screenOptions={{ headerShown: false }}
       tabBar={_props => <BottomTabNavigator {..._props} />}>
       <Tab.Screen name="Dashboard" component={Dashboard} />
-
       <Tab.Screen name="Salat">{() => <Text>Salat Screen</Text>}</Tab.Screen>
 
       <Tab.Screen name="Prayer">
         {() => <Text>Dua Prayer Screen</Text>}
       </Tab.Screen>
 
-      <Tab.Screen name="Bookmark">
-        {() => <Text>Bookmark Screen</Text>}
-      </Tab.Screen>
+      <Tab.Screen name="Bookmark" component={Bookmark} />
     </Tab.Navigator>
   );
 };
