@@ -22,7 +22,7 @@ const Dashboard = () => {
               <Icon name="menu-outline" size={styles?.icon?.size} />
             </TouchableOpacity>
 
-            <Text style={styles.topHeaderTitle}>Quran App</Text>
+            <Text style={styles.topHeaderTitle}>Surah</Text>
           </View>
 
           <TouchableOpacity>
