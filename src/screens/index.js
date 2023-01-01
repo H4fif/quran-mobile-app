@@ -1,4 +1,5 @@
-import Home from './Home';
 import Dashboard from './Dashboard';
+import Home from './Home';
+import Bookmark from './Bookmark';
 
-export { Home, Dashboard };
+export { Bookmark, Dashboard, Home };
