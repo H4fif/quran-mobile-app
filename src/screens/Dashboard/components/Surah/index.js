@@ -1,8 +1,14 @@
-import { ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
+import {
+  ActivityIndicator,
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+} from 'react-native';
 import React, { useEffect, useState } from 'react';
 import ListSurahItem from './components/ListSurahItem';
 import { COLORS } from '../../../../constants';
-import axios from 'axios';
+import { api } from '../../../../constants';
 
 const Surah = () => {
   const [data, setData] = useState([]);
@@ -15,14 +21,15 @@ const Surah = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    axios
-      .get('http://api.alquran.cloud/v1/meta')
+    api
+      .get('meta')
       .then(response => {
         const _data = response?.data?.data;
         setData(_data?.surahs);
       })
       .catch(error => {
         console.log('FETCH QURAN META FAILED >>> ', error);
+        Alert.alert('Failed to get list of surah(s), please try again later');
       })
       .finally(() => {
         setIsLoading(false);
@@ -33,10 +40,16 @@ const Surah = () => {
     <ScrollView style={styles.container}>
       {isLoading ? (
         <ActivityIndicator size="large" color={COLORS.primary} />
-      ) : (
+      ) : data?.references ? (
         data?.references?.map(item => (
-          <ListSurahItem onPressListItem={onPressListItem} surah={item} />
+          <ListSurahItem
+            key={`surah-number-${item.number}`}
+            onPressListItem={onPressListItem}
+            surah={item}
+          />
         ))
+      ) : (
+        <Text style={styles.labelEmpty}>No data to display</Text>
       )}
     </ScrollView>
   );
@@ -47,5 +60,8 @@ export default Surah;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
+  },
+  labelEmpty: {
+    textAlign: 'center',
   },
 });
