@@ -37,7 +37,7 @@ const Surah = () => {
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {isLoading ? (
         <ActivityIndicator size="large" color={COLORS.primary} />
       ) : data?.references ? (
