@@ -4,7 +4,8 @@ import { COLORS } from '../../../../constants';
 export default StyleSheet.create({
   tabHeader: {
     flexDirection: 'row',
-    paddingVertical: 24,
+    paddingVertical: 8,
+    paddingBottom: 24,
   },
   tabHeaderButton: isFocused => ({
     flex: 1,
