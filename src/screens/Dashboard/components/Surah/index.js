@@ -10,12 +10,12 @@ import ListSurahItem from './components/ListSurahItem';
 import { COLORS } from '../../../../constants';
 import { api } from '../../../../constants';
 
-const Surah = () => {
+const Surah = ({ navigation }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const onPressListItem = event => {
-    console.log({ event });
+  const onPressListItem = surah => {
+    navigation.navigate('SurahDetail', { surah });
   };
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Surah = () => {
         data?.references?.map(item => (
           <ListSurahItem
             key={`surah-number-${item.number}`}
-            onPressListItem={onPressListItem}
+            onPressListItem={() => onPressListItem(item)}
             surah={item}
           />
         ))
