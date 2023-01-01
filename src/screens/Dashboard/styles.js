@@ -27,7 +27,11 @@ export default StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
     flex: 1,
-    paddingHorizontal: 24,
+    paddingHorizontal: 16,
+  },
+  containerSafeArea: {
+    backgroundColor: COLORS.white,
+    flex: 1,
   },
   greetings: {
     alignItems: 'flex-start',
@@ -48,6 +52,10 @@ export default StyleSheet.create({
   icon: {
     marginRight: 8,
     size: 24,
+  },
+  lastRead: {
+    color: COLORS.white,
+    fontSize: 14,
   },
   menuButton: {
     marginRight: 24,
