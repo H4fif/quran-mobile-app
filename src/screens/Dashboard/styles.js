@@ -14,11 +14,13 @@ export default StyleSheet.create({
   },
   bannerSurahName: {
     color: COLORS.white,
+    fontFamily: 'Poppins-Regular',
     fontSize: 18,
     fontWeight: '600',
   },
   bannerSurahAyah: {
     color: COLORS.white,
+    fontFamily: 'Poppins-Regular',
     fontSize: 14,
     fontWeight: '400',
   },
@@ -33,11 +35,13 @@ export default StyleSheet.create({
   },
   greetingName: {
     color: COLORS.black,
+    fontFamily: 'Poppins-Regular',
     fontSize: 24,
     fontWeight: '600',
   },
   greetingText: {
     color: COLORS.gray,
+    fontFamily: 'Poppins-Regular',
     fontSize: 18,
     fontWeight: '500',
   },
@@ -67,6 +71,7 @@ export default StyleSheet.create({
   },
   topHeaderTitle: {
     color: COLORS.primary,
+    fontFamily: 'Poppins-Regular',
     fontSize: 20,
     fontWeight: '700',
   },
