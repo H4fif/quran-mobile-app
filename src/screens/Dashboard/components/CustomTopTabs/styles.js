@@ -4,7 +4,7 @@ import { COLORS } from '../../../../constants';
 export default StyleSheet.create({
   tabHeader: {
     flexDirection: 'row',
-    paddingTop: 24,
+    paddingVertical: 24,
   },
   tabHeaderButton: isFocused => ({
     flex: 1,
@@ -16,6 +16,7 @@ export default StyleSheet.create({
   }),
   tabHeaderLabel: isFocused => ({
     color: isFocused ? COLORS.primary : COLORS.gray,
+    fontFamily: 'Poppins-Regular',
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
