@@ -8,30 +8,62 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* QuranAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* QuranAppTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-QuranApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-QuranApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-QuranApp-QuranAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-QuranApp-QuranAppTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		762D1B08514D4AC6B003FCA5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A04C7387D30247DEA9A61ED4 /* Poppins-Black.ttf */; };
-		F21D662C977C41AFBA1E3875 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4278E146F814F95855F6B48 /* Poppins-BlackItalic.ttf */; };
-		945C63C5AC2344E38C9E8EDF /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E01840878D4909B363E6FE /* Poppins-Bold.ttf */; };
 		1F8B28081AC5461FBE25E5AA /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC251B08C374EEA976D7C63 /* Poppins-BoldItalic.ttf */; };
-		E16BD34AEBB04222AFA130BC /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE78D468BE46CF818FC014 /* Poppins-ExtraBold.ttf */; };
-		F411EEDDAC384E128132C7E7 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F244F72DA9469AB12AE28E /* Poppins-ExtraBoldItalic.ttf */; };
-		E14108E63D4049A19D9FEB19 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AD71489BCC641CF9C9D09A1 /* Poppins-ExtraLight.ttf */; };
-		40C106A78472465CB20F97A2 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7500333B9A342D4BB19838A /* Poppins-ExtraLightItalic.ttf */; };
-		5C5D39A2D6A64B94ACEC95BD /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6820E983848E1BB2B4F6D /* Poppins-Italic.ttf */; };
-		FC945CD839844594A5228ECC /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE521D5416634F30943CAFB8 /* Poppins-Light.ttf */; };
 		32E3199666F34AA895FDC792 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFEBF238578E49EC89F993CC /* Poppins-LightItalic.ttf */; };
-		B471DE97B4A34DF09A3F784A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B69B2786DCD42FCA1CE12C7 /* Poppins-Medium.ttf */; };
-		71C0400FBA1F4BDBA24597D8 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7DDD79F7BB4C27970CF1A0 /* Poppins-MediumItalic.ttf */; };
-		DE55630EE71A48ADBF8D6E22 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE86F74587AC485A9EC36942 /* Poppins-Regular.ttf */; };
-		915C1DBDE7BE44528BE2BA3F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2759B899270543A8A9C31E12 /* Poppins-SemiBold.ttf */; };
+		40C106A78472465CB20F97A2 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7500333B9A342D4BB19838A /* Poppins-ExtraLightItalic.ttf */; };
 		4302AD9E4E9B40B89753512D /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9538CFC0EDE140D9A6D0F2C4 /* Poppins-SemiBoldItalic.ttf */; };
+		5C5D39A2D6A64B94ACEC95BD /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AD6820E983848E1BB2B4F6D /* Poppins-Italic.ttf */; };
+		71C0400FBA1F4BDBA24597D8 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED7DDD79F7BB4C27970CF1A0 /* Poppins-MediumItalic.ttf */; };
+		762D1B08514D4AC6B003FCA5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A04C7387D30247DEA9A61ED4 /* Poppins-Black.ttf */; };
+		7BE0E6D92961677600CA9662 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6C92961677600CA9662 /* FontAwesome5_Solid.ttf */; };
+		7BE0E6DA2961677600CA9662 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6C92961677600CA9662 /* FontAwesome5_Solid.ttf */; };
+		7BE0E6DB2961677600CA9662 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CA2961677600CA9662 /* EvilIcons.ttf */; };
+		7BE0E6DC2961677600CA9662 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CA2961677600CA9662 /* EvilIcons.ttf */; };
+		7BE0E6DD2961677600CA9662 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CB2961677600CA9662 /* MaterialCommunityIcons.ttf */; };
+		7BE0E6DE2961677600CA9662 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CB2961677600CA9662 /* MaterialCommunityIcons.ttf */; };
+		7BE0E6DF2961677600CA9662 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CC2961677600CA9662 /* FontAwesome5_Regular.ttf */; };
+		7BE0E6E02961677600CA9662 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CC2961677600CA9662 /* FontAwesome5_Regular.ttf */; };
+		7BE0E6E12961677600CA9662 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CD2961677600CA9662 /* Fontisto.ttf */; };
+		7BE0E6E22961677600CA9662 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CD2961677600CA9662 /* Fontisto.ttf */; };
+		7BE0E6E32961677600CA9662 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CE2961677600CA9662 /* Octicons.ttf */; };
+		7BE0E6E42961677600CA9662 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CE2961677600CA9662 /* Octicons.ttf */; };
+		7BE0E6E52961677600CA9662 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CF2961677600CA9662 /* Ionicons.ttf */; };
+		7BE0E6E62961677600CA9662 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6CF2961677600CA9662 /* Ionicons.ttf */; };
+		7BE0E6E72961677600CA9662 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D02961677600CA9662 /* Foundation.ttf */; };
+		7BE0E6E82961677600CA9662 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D02961677600CA9662 /* Foundation.ttf */; };
+		7BE0E6E92961677600CA9662 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D12961677600CA9662 /* Entypo.ttf */; };
+		7BE0E6EA2961677600CA9662 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D12961677600CA9662 /* Entypo.ttf */; };
+		7BE0E6EB2961677600CA9662 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D22961677600CA9662 /* AntDesign.ttf */; };
+		7BE0E6EC2961677600CA9662 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D22961677600CA9662 /* AntDesign.ttf */; };
+		7BE0E6ED2961677600CA9662 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D32961677600CA9662 /* Zocial.ttf */; };
+		7BE0E6EE2961677600CA9662 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D32961677600CA9662 /* Zocial.ttf */; };
+		7BE0E6EF2961677600CA9662 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D42961677600CA9662 /* FontAwesome5_Brands.ttf */; };
+		7BE0E6F02961677600CA9662 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D42961677600CA9662 /* FontAwesome5_Brands.ttf */; };
+		7BE0E6F12961677600CA9662 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D52961677600CA9662 /* SimpleLineIcons.ttf */; };
+		7BE0E6F22961677600CA9662 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D52961677600CA9662 /* SimpleLineIcons.ttf */; };
+		7BE0E6F32961677600CA9662 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D62961677600CA9662 /* MaterialIcons.ttf */; };
+		7BE0E6F42961677600CA9662 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D62961677600CA9662 /* MaterialIcons.ttf */; };
+		7BE0E6F52961677600CA9662 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D72961677600CA9662 /* Feather.ttf */; };
+		7BE0E6F62961677600CA9662 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D72961677600CA9662 /* Feather.ttf */; };
+		7BE0E6F72961677600CA9662 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D82961677600CA9662 /* FontAwesome.ttf */; };
+		7BE0E6F82961677600CA9662 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0E6D82961677600CA9662 /* FontAwesome.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		915C1DBDE7BE44528BE2BA3F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2759B899270543A8A9C31E12 /* Poppins-SemiBold.ttf */; };
+		945C63C5AC2344E38C9E8EDF /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E01840878D4909B363E6FE /* Poppins-Bold.ttf */; };
 		95C05423D959475593B98572 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E68F34B20FD74089AFA48DEC /* Poppins-Thin.ttf */; };
+		B471DE97B4A34DF09A3F784A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B69B2786DCD42FCA1CE12C7 /* Poppins-Medium.ttf */; };
 		BC48DA29DB724EE58EC7E3A6 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2311127BB659473FAD78274C /* Poppins-ThinItalic.ttf */; };
+		CDE717C216D0D777B6A5FFC8 /* libPods-QuranApp-QuranAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E7CE4F613024431FC57560 /* libPods-QuranApp-QuranAppTests.a */; };
+		DE55630EE71A48ADBF8D6E22 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE86F74587AC485A9EC36942 /* Poppins-Regular.ttf */; };
+		E14108E63D4049A19D9FEB19 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AD71489BCC641CF9C9D09A1 /* Poppins-ExtraLight.ttf */; };
+		E16BD34AEBB04222AFA130BC /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE78D468BE46CF818FC014 /* Poppins-ExtraBold.ttf */; };
+		EB37E82A8C31E5E422848B19 /* libPods-QuranApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 401812CCD2BAC659A9188337 /* libPods-QuranApp.a */; };
+		F21D662C977C41AFBA1E3875 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4278E146F814F95855F6B48 /* Poppins-BlackItalic.ttf */; };
+		F411EEDDAC384E128132C7E7 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F244F72DA9469AB12AE28E /* Poppins-ExtraBoldItalic.ttf */; };
+		FC945CD839844594A5228ECC /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE521D5416634F30943CAFB8 /* Poppins-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,32 +86,48 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = QuranApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = QuranApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = QuranApp/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-QuranApp-QuranAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuranApp-QuranAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-QuranApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp.debug.xcconfig"; path = "Target Support Files/Pods-QuranApp/Pods-QuranApp.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-QuranApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp.release.xcconfig"; path = "Target Support Files/Pods-QuranApp/Pods-QuranApp.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-QuranApp-QuranAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp-QuranAppTests.debug.xcconfig"; path = "Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-QuranApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuranApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		199DC1E8716461DD3E6E982F /* Pods-QuranApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp.release.xcconfig"; path = "Target Support Files/Pods-QuranApp/Pods-QuranApp.release.xcconfig"; sourceTree = "<group>"; };
+		2311127BB659473FAD78274C /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ThinItalic.ttf"; path = "../src/assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		2759B899270543A8A9C31E12 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		2DBE78D468BE46CF818FC014 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		401812CCD2BAC659A9188337 /* libPods-QuranApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuranApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62E7CE4F613024431FC57560 /* libPods-QuranApp-QuranAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuranApp-QuranAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD6820E983848E1BB2B4F6D /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../src/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		7B69B2786DCD42FCA1CE12C7 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		7BE0E6C92961677600CA9662 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		7BE0E6CA2961677600CA9662 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		7BE0E6CB2961677600CA9662 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		7BE0E6CC2961677600CA9662 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		7BE0E6CD2961677600CA9662 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		7BE0E6CE2961677600CA9662 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		7BE0E6CF2961677600CA9662 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		7BE0E6D02961677600CA9662 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		7BE0E6D12961677600CA9662 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		7BE0E6D22961677600CA9662 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		7BE0E6D32961677600CA9662 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		7BE0E6D42961677600CA9662 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		7BE0E6D52961677600CA9662 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		7BE0E6D62961677600CA9662 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		7BE0E6D72961677600CA9662 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		7BE0E6D82961677600CA9662 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		7FC251B08C374EEA976D7C63 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = QuranApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-QuranApp-QuranAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp-QuranAppTests.release.xcconfig"; path = "Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8AD71489BCC641CF9C9D09A1 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9538CFC0EDE140D9A6D0F2C4 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A04C7387D30247DEA9A61ED4 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
+		A2F244F72DA9469AB12AE28E /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		A4278E146F814F95855F6B48 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BlackItalic.ttf"; path = "../src/assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		A45D3922F20CCE33B4B4096D /* Pods-QuranApp-QuranAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp-QuranAppTests.debug.xcconfig"; path = "Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1D32077821F3F2165E8A8DA /* Pods-QuranApp-QuranAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp-QuranAppTests.release.xcconfig"; path = "Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		E68F34B20FD74089AFA48DEC /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		E7500333B9A342D4BB19838A /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		E8E01840878D4909B363E6FE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		A04C7387D30247DEA9A61ED4 /* Poppins-Black.ttf */ = {isa = PBXFileReference; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A4278E146F814F95855F6B48 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-BlackItalic.ttf"; path = "../src/assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E8E01840878D4909B363E6FE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7FC251B08C374EEA976D7C63 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2DBE78D468BE46CF818FC014 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A2F244F72DA9469AB12AE28E /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8AD71489BCC641CF9C9D09A1 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E7500333B9A342D4BB19838A /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6AD6820E983848E1BB2B4F6D /* Poppins-Italic.ttf */ = {isa = PBXFileReference; name = "Poppins-Italic.ttf"; path = "../src/assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FE521D5416634F30943CAFB8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EFEBF238578E49EC89F993CC /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7B69B2786DCD42FCA1CE12C7 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		ED7DDD79F7BB4C27970CF1A0 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FE86F74587AC485A9EC36942 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2759B899270543A8A9C31E12 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9538CFC0EDE140D9A6D0F2C4 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E68F34B20FD74089AFA48DEC /* Poppins-Thin.ttf */ = {isa = PBXFileReference; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2311127BB659473FAD78274C /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-ThinItalic.ttf"; path = "../src/assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ED7DDD79F7BB4C27970CF1A0 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EFEBF238578E49EC89F993CC /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		FC21EF4B1A2994AFD2912D53 /* Pods-QuranApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranApp.debug.xcconfig"; path = "Target Support Files/Pods-QuranApp/Pods-QuranApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FE521D5416634F30943CAFB8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
+		FE86F74587AC485A9EC36942 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-QuranApp-QuranAppTests.a in Frameworks */,
+				CDE717C216D0D777B6A5FFC8 /* libPods-QuranApp-QuranAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-QuranApp.a in Frameworks */,
+				EB37E82A8C31E5E422848B19 /* libPods-QuranApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +170,7 @@
 		13B07FAE1A68108700A75B9A /* QuranApp */ = {
 			isa = PBXGroup;
 			children = (
+				7BE0E6C8296166AF00CA9662 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -136,10 +185,33 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-QuranApp.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-QuranApp-QuranAppTests.a */,
+				401812CCD2BAC659A9188337 /* libPods-QuranApp.a */,
+				62E7CE4F613024431FC57560 /* libPods-QuranApp-QuranAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BE0E6C8296166AF00CA9662 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7BE0E6D22961677600CA9662 /* AntDesign.ttf */,
+				7BE0E6D12961677600CA9662 /* Entypo.ttf */,
+				7BE0E6CA2961677600CA9662 /* EvilIcons.ttf */,
+				7BE0E6D72961677600CA9662 /* Feather.ttf */,
+				7BE0E6D82961677600CA9662 /* FontAwesome.ttf */,
+				7BE0E6D42961677600CA9662 /* FontAwesome5_Brands.ttf */,
+				7BE0E6CC2961677600CA9662 /* FontAwesome5_Regular.ttf */,
+				7BE0E6C92961677600CA9662 /* FontAwesome5_Solid.ttf */,
+				7BE0E6CD2961677600CA9662 /* Fontisto.ttf */,
+				7BE0E6D02961677600CA9662 /* Foundation.ttf */,
+				7BE0E6CF2961677600CA9662 /* Ionicons.ttf */,
+				7BE0E6CB2961677600CA9662 /* MaterialCommunityIcons.ttf */,
+				7BE0E6D62961677600CA9662 /* MaterialIcons.ttf */,
+				7BE0E6CE2961677600CA9662 /* Octicons.ttf */,
+				7BE0E6D52961677600CA9662 /* SimpleLineIcons.ttf */,
+				7BE0E6D32961677600CA9662 /* Zocial.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -174,19 +246,8 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3B4392A12AC88292D35C810B /* Pods-QuranApp.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-QuranApp.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-QuranApp-QuranAppTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-QuranApp-QuranAppTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		ACD9471A14E74020853AD43A /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				A04C7387D30247DEA9A61ED4 /* Poppins-Black.ttf */,
 				A4278E146F814F95855F6B48 /* Poppins-BlackItalic.ttf */,
@@ -209,7 +270,17 @@
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC21EF4B1A2994AFD2912D53 /* Pods-QuranApp.debug.xcconfig */,
+				199DC1E8716461DD3E6E982F /* Pods-QuranApp.release.xcconfig */,
+				A45D3922F20CCE33B4B4096D /* Pods-QuranApp-QuranAppTests.debug.xcconfig */,
+				E1D32077821F3F2165E8A8DA /* Pods-QuranApp-QuranAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -218,12 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "QuranAppTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				B3AC13666C6B4FDA3B4ABE51 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				7A138F7B0DBD7C317BB2C8DD /* [CP] Embed Pods Frameworks */,
+				467FC0E8071029BEA82847B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,14 +310,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "QuranApp" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				94BFCD3F64FFFCC09E3DDAE6 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				5578931544B9C7344F8A8981 /* [CP] Embed Pods Frameworks */,
+				5D0397C2A6D102515320A9EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +369,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE0E6DA2961677600CA9662 /* FontAwesome5_Solid.ttf in Resources */,
+				7BE0E6E82961677600CA9662 /* Foundation.ttf in Resources */,
+				7BE0E6F62961677600CA9662 /* Feather.ttf in Resources */,
+				7BE0E6F82961677600CA9662 /* FontAwesome.ttf in Resources */,
+				7BE0E6F22961677600CA9662 /* SimpleLineIcons.ttf in Resources */,
+				7BE0E6DE2961677600CA9662 /* MaterialCommunityIcons.ttf in Resources */,
+				7BE0E6E22961677600CA9662 /* Fontisto.ttf in Resources */,
+				7BE0E6EC2961677600CA9662 /* AntDesign.ttf in Resources */,
+				7BE0E6F42961677600CA9662 /* MaterialIcons.ttf in Resources */,
+				7BE0E6E62961677600CA9662 /* Ionicons.ttf in Resources */,
+				7BE0E6EE2961677600CA9662 /* Zocial.ttf in Resources */,
+				7BE0E6E02961677600CA9662 /* FontAwesome5_Regular.ttf in Resources */,
+				7BE0E6E42961677600CA9662 /* Octicons.ttf in Resources */,
+				7BE0E6F02961677600CA9662 /* FontAwesome5_Brands.ttf in Resources */,
+				7BE0E6EA2961677600CA9662 /* Entypo.ttf in Resources */,
+				7BE0E6DC2961677600CA9662 /* EvilIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,21 +392,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE0E6D92961677600CA9662 /* FontAwesome5_Solid.ttf in Resources */,
+				7BE0E6ED2961677600CA9662 /* Zocial.ttf in Resources */,
+				7BE0E6E72961677600CA9662 /* Foundation.ttf in Resources */,
+				7BE0E6DD2961677600CA9662 /* MaterialCommunityIcons.ttf in Resources */,
+				7BE0E6E52961677600CA9662 /* Ionicons.ttf in Resources */,
+				7BE0E6DB2961677600CA9662 /* EvilIcons.ttf in Resources */,
+				7BE0E6E92961677600CA9662 /* Entypo.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				7BE0E6EF2961677600CA9662 /* FontAwesome5_Brands.ttf in Resources */,
 				762D1B08514D4AC6B003FCA5 /* Poppins-Black.ttf in Resources */,
 				F21D662C977C41AFBA1E3875 /* Poppins-BlackItalic.ttf in Resources */,
+				7BE0E6E12961677600CA9662 /* Fontisto.ttf in Resources */,
 				945C63C5AC2344E38C9E8EDF /* Poppins-Bold.ttf in Resources */,
 				1F8B28081AC5461FBE25E5AA /* Poppins-BoldItalic.ttf in Resources */,
+				7BE0E6E32961677600CA9662 /* Octicons.ttf in Resources */,
 				E16BD34AEBB04222AFA130BC /* Poppins-ExtraBold.ttf in Resources */,
 				F411EEDDAC384E128132C7E7 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				E14108E63D4049A19D9FEB19 /* Poppins-ExtraLight.ttf in Resources */,
 				40C106A78472465CB20F97A2 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				5C5D39A2D6A64B94ACEC95BD /* Poppins-Italic.ttf in Resources */,
 				FC945CD839844594A5228ECC /* Poppins-Light.ttf in Resources */,
+				7BE0E6F52961677600CA9662 /* Feather.ttf in Resources */,
+				7BE0E6F72961677600CA9662 /* FontAwesome.ttf in Resources */,
 				32E3199666F34AA895FDC792 /* Poppins-LightItalic.ttf in Resources */,
 				B471DE97B4A34DF09A3F784A /* Poppins-Medium.ttf in Resources */,
 				71C0400FBA1F4BDBA24597D8 /* Poppins-MediumItalic.ttf in Resources */,
+				7BE0E6DF2961677600CA9662 /* FontAwesome5_Regular.ttf in Resources */,
+				7BE0E6F12961677600CA9662 /* SimpleLineIcons.ttf in Resources */,
+				7BE0E6EB2961677600CA9662 /* AntDesign.ttf in Resources */,
+				7BE0E6F32961677600CA9662 /* MaterialIcons.ttf in Resources */,
 				DE55630EE71A48ADBF8D6E22 /* Poppins-Regular.ttf in Resources */,
 				915C1DBDE7BE44528BE2BA3F /* Poppins-SemiBold.ttf in Resources */,
 				4302AD9E4E9B40B89753512D /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -347,7 +450,24 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		467FC0E8071029BEA82847B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5578931544B9C7344F8A8981 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,29 +484,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		5D0397C2A6D102515320A9EA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-QuranApp-QuranAppTests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		7A138F7B0DBD7C317BB2C8DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94BFCD3F64FFFCC09E3DDAE6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -408,55 +540,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+		B3AC13666C6B4FDA3B4ABE51 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuranApp-QuranAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp/Pods-QuranApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuranApp-QuranAppTests/Pods-QuranApp-QuranAppTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -511,7 +614,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-QuranApp-QuranAppTests.debug.xcconfig */;
+			baseConfigurationReference = A45D3922F20CCE33B4B4096D /* Pods-QuranApp-QuranAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -538,7 +641,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-QuranApp-QuranAppTests.release.xcconfig */;
+			baseConfigurationReference = E1D32077821F3F2165E8A8DA /* Pods-QuranApp-QuranAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -562,12 +665,13 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-QuranApp.debug.xcconfig */;
+			baseConfigurationReference = FC21EF4B1A2994AFD2912D53 /* Pods-QuranApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				INFOPLIST_FILE = QuranApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,11 +692,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-QuranApp.release.xcconfig */;
+			baseConfigurationReference = 199DC1E8716461DD3E6E982F /* Pods-QuranApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "i386 arm64";
 				INFOPLIST_FILE = QuranApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
