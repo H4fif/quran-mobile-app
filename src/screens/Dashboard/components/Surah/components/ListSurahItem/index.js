@@ -4,8 +4,6 @@ import styles from './styles';
 import { images } from '../../../../../../constants';
 
 const ListSurahItem = ({ onPressListItem, surah }) => {
-  console.log({ surah });
-
   return (
     <TouchableOpacity style={styles.listItem} onPress={onPressListItem}>
       <View style={styles.listItemName}>
