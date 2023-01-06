@@ -1,47 +1,28 @@
-import {
-  ActivityIndicator,
-  Alert,
-  ScrollView,
-  StyleSheet,
-  Text,
-} from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, ScrollView, StyleSheet, Text } from 'react-native';
+import React, { useEffect } from 'react';
 import ListSurahItem from './components/ListSurahItem';
 import { COLORS } from '../../../../constants';
-import { api } from '../../../../constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadSurahs } from '../../redux/api';
 
 const Surah = ({ navigation }) => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { loading, surahs } = useSelector(state => state.dashboard);
 
   const onPressListItem = surah => {
     navigation.navigate('SurahDetail', { surah });
   };
 
   useEffect(() => {
-    setIsLoading(true);
-
-    api
-      .get('meta')
-      .then(response => {
-        const _data = response?.data?.data;
-        setData(_data?.surahs);
-      })
-      .catch(error => {
-        console.log('FETCH QURAN META FAILED >>> ', error);
-        Alert.alert('Failed to get list of surah(s), please try again later');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+    dispatch(loadSurahs());
+  }, [dispatch]);
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      {isLoading ? (
+      {loading ? (
         <ActivityIndicator size="large" color={COLORS.primary} />
-      ) : data?.references ? (
-        data?.references?.map(item => (
+      ) : surahs?.references ? (
+        surahs?.references?.map(item => (
           <ListSurahItem
             key={`surah-number-${item.number}`}
             onPressListItem={() => onPressListItem(item)}
