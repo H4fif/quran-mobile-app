@@ -1,13 +1,13 @@
 import {
   ActivityIndicator,
   Alert,
+  FlatList,
   ImageBackground,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, api, images } from '../../constants';
 import FIcon from 'react-native-vector-icons/Feather';
@@ -15,39 +15,87 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ListItem from './ListItem';
 import styles from './styles';
 
+const initialPage = {
+  offset: 0,
+  limit: 10,
+};
+
 const SurahDetail = ({ route, navigation }) => {
   const { surah } = route.params;
   const [isLoading, setIsLoading] = useState(false);
-  const [_surah, set_Surah] = useState([]);
-  const [ayahTranslation, setAyahTranslation] = useState([]);
+  const [page, setPage] = useState(1);
+  const [_surah, set_Surah] = useState({
+    arabic: {},
+    translation: {},
+  });
+
+  const getPagination = _page => ({
+    limit: initialPage.limit,
+    offset: initialPage.limit * (_page - 1),
+  });
+
+  const fetchData = useCallback(
+    (_page = 1) => {
+      setIsLoading(true);
+
+      api
+        .get(
+          `surah/${surah.number}/editions/quran-uthmani,id.indonesian?language=id`,
+          {
+            params: {
+              ...getPagination(_page),
+            },
+          },
+        )
+        .then(response => {
+          const _data = response?.data?.data;
+
+          set_Surah(prevState => ({
+            ...prevState,
+            arabic: {
+              ...prevState?.arabic,
+              ayahs: [
+                ...(prevState?.arabic?.ayahs ? prevState.arabic.ayahs : []),
+                ..._data[0].ayahs,
+              ],
+            },
+            translation: {
+              ...prevState?.translation,
+              ayahs: [
+                ...(prevState?.translation?.ayahs
+                  ? prevState.translation.ayahs
+                  : []),
+                ..._data[1].ayahs,
+              ],
+            },
+          }));
+        })
+        .catch(error => {
+          Alert.alert(
+            'Failed to get ayah of the current surah, try again later.',
+          );
+        })
+        .finally(() => setIsLoading(false));
+    },
+    [surah.number],
+  );
+
+  const renderItem = ({ item: ayah }) => {
+    return (
+      <ListItem
+        key={`surah-detail-ayah-${ayah?.number}`}
+        ayah={ayah}
+        ayahTranslation={
+          _surah?.translation?.ayahs?.find(item => item.number === ayah?.number)
+            ?.text || '-'
+        }
+      />
+    );
+  };
 
   useEffect(() => {
-    setIsLoading(true);
-
-    api
-      .get(
-        `surah/${surah.number}/editions/quran-uthmani,id.indonesian?language=id`,
-      )
-      .then(response => {
-        const _data = response?.data?.data;
-        set_Surah(_data[0]);
-
-        if (_data.length > 1) {
-          setAyahTranslation(_data[1]);
-        }
-      })
-      .catch(error => {
-        Alert.alert(
-          'Failed to get ayah of the current surah, try again later.',
-        );
-      })
-      .finally(() => setIsLoading(false));
-
-    return () => {
-      set_Surah([]);
-      setAyahTranslation([]);
-    };
-  }, [surah.number]);
+    fetchData(page);
+  }, [fetchData, page]);
 
   return (
     <SafeAreaView style={styles.containerSafeArea}>
@@ -76,43 +124,39 @@ const SurahDetail = ({ route, navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <ImageBackground
-            source={images.PlayerBackground}
-            imageStyle={styles.header}
-            style={styles.header}>
-            <View>
-              <Text style={styles.titleArabic}>{surah?.name}</Text>
+        <ImageBackground
+          source={images.PlayerBackground}
+          imageStyle={styles.header}
+          style={styles.header}>
+          <View>
+            <Text style={styles.titleArabic}>{surah?.name}</Text>
 
-              <Text style={styles.titleEnglish}>
-                {surah?.englishNameTranslation}
-              </Text>
+            <Text style={styles.titleEnglish}>
+              {surah?.englishNameTranslation}
+            </Text>
 
-              <Text style={styles.titleEnglish}>
-                Revelation: {surah?.revelationType}
-              </Text>
-              <Text style={styles.titleEnglish}>
-                {surah?.numberOfAyahs} Verses
-              </Text>
-            </View>
-          </ImageBackground>
+            <Text style={styles.titleEnglish}>
+              Revelation: {surah?.revelationType}
+            </Text>
+            <Text style={styles.titleEnglish}>
+              {surah?.numberOfAyahs} Verses
+            </Text>
+          </View>
+        </ImageBackground>
 
-          {isLoading ? (
-            <ActivityIndicator size="large" />
-          ) : (
-            _surah?.ayahs?.map((ayah, index) => (
-              <ListItem
-                key={`surah-detail-ayah-${ayah?.number}`}
-                ayah={ayah}
-                ayahTranslation={
-                  ayahTranslation?.ayahs?.find(
-                    item => item.number === ayah?.number,
-                  )?.text || '-'
-                }
-              />
-            ))
-          )}
-        </ScrollView>
+        <FlatList
+          data={_surah?.arabic?.ayahs || []}
+          renderItem={renderItem}
+          onEndReached={() => {
+            if (surah.numberOfAyahs > initialPage.limit) {
+              setPage(prevState => prevState + 1);
+            }
+          }}
+          showsVerticalScrollIndicator={false}
+          StickyHeaderComponent={<Text>this is header</Text>}
+        />
+
+        {isLoading ? <ActivityIndicator size="large" /> : null}
       </View>
     </SafeAreaView>
   );
