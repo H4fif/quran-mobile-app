@@ -1,5 +1,11 @@
-import { ActivityIndicator, ScrollView, StyleSheet, Text } from 'react-native';
-import React, { useEffect } from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import React, { useCallback, useEffect } from 'react';
 import ListSurahItem from './components/ListSurahItem';
 import { COLORS } from '../../../../constants';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,30 +15,44 @@ const Surah = ({ navigation }) => {
   const dispatch = useDispatch();
   const { loading, surahs } = useSelector(state => state.dashboard);
 
-  const onPressListItem = surah => {
-    navigation.navigate('SurahDetail', { surah });
-  };
+  const onPressListItem = useCallback(
+    surah => {
+      navigation.navigate('SurahDetail', { surah });
+    },
+    [navigation],
+  );
+
+  const renderItem = useCallback(
+    ({ item }) => (
+      <ListSurahItem
+        key={`surah-number-${item.number}`}
+        onPressListItem={() => onPressListItem(item)}
+        surah={item}
+      />
+    ),
+    [onPressListItem],
+  );
 
   useEffect(() => {
     dispatch(loadSurahs());
   }, [dispatch]);
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <View style={{ ...styles.container, flex: 1 }}>
       {loading ? (
         <ActivityIndicator size="large" color={COLORS.primary} />
-      ) : surahs?.references ? (
-        surahs?.references?.map(item => (
-          <ListSurahItem
-            key={`surah-number-${item.number}`}
-            onPressListItem={() => onPressListItem(item)}
-            surah={item}
-          />
-        ))
       ) : (
-        <Text style={styles.labelEmpty}>No data to display</Text>
+        <FlatList
+          data={surahs?.references}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+          style={styles.container}
+          ListEmptyComponent={
+            <Text style={styles.labelEmpty}>No data to display</Text>
+          }
+        />
       )}
-    </ScrollView>
+    </View>
   );
 };
 
