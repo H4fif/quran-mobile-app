@@ -1,7 +1,7 @@
 import { Pressable, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import FIcon from 'react-native-vector-icons/Feather';
-import { COLORS } from '../../../constants';
+import { COLORS } from '../../../../constants';
 import styles from './styles';
 
 const ListItem = ({ ayah, ayahTranslation, onPressIn }) => {

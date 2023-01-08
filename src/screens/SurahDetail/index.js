@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, api, images } from '../../constants';
 import FIcon from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ListItem from './ListItem';
+import { ListItem } from './components';
 import styles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFindAyah, setLastReadSurah } from './redux/slice';
