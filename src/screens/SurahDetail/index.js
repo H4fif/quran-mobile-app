@@ -1,5 +1,4 @@
 import {
-  ActivityIndicator,
   Alert,
   FlatList,
   ImageBackground,
@@ -7,15 +6,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, api, images } from '../../constants';
 import FIcon from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ListItem from './ListItem';
 import styles from './styles';
-import { useDispatch } from 'react-redux';
-import { setLastReadSurah } from './redux/slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFindAyah, setLastReadSurah } from './redux/slice';
+import ModalAyahSearch from './components/ModalAyahSearch';
+import { Loader } from '../../components';
 
 const initialPage = {
   offset: 0,
@@ -24,6 +25,7 @@ const initialPage = {
 
 const SurahDetail = ({ route, navigation }) => {
   const dispatch = useDispatch();
+  const { findAyah } = useSelector(state => state.surahDetail);
   const { surah } = route.params;
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -31,6 +33,8 @@ const SurahDetail = ({ route, navigation }) => {
     arabic: {},
     translation: {},
   });
+  const [_findAyah, set_findAyah] = useState('');
+  const [searchModalVisible, setSearchModalVisible] = useState(false);
 
   const getPagination = _page => ({
     limit: initialPage.limit,
@@ -112,16 +116,65 @@ const SurahDetail = ({ route, navigation }) => {
     [_surah, updateLastReadSurah],
   );
 
+  const onPressReset = () => {
+    setSearchModalVisible(false);
+    set_findAyah('');
+    dispatch(setFindAyah(''));
+  };
+
+  const onChangeText = text => {
+    set_findAyah(text);
+  };
+
+  const onPressSubmit = () => {
+    dispatch(setFindAyah(_findAyah));
+    setSearchModalVisible(false);
+  };
+
+  const resetFindStates = useCallback(() => {
+    dispatch(setFindAyah(''));
+    set_findAyah('');
+  }, [dispatch]);
+
   useEffect(() => {
     fetchData(page);
 
     if (surah?.name) {
       updateLastReadSurah(1);
     }
-  }, [dispatch, fetchData, page, surah, updateLastReadSurah]);
+
+    return () => {
+      resetFindStates();
+    };
+  }, [dispatch, fetchData, page, surah, resetFindStates, updateLastReadSurah]);
+
+  const filteredAyahs = useMemo(
+    () =>
+      !findAyah?.length
+        ? _surah?.arabic?.ayahs
+        : _surah?.arabic?.ayahs?.filter(item =>
+            _surah?.translation?.ayahs
+              .filter(
+                translation =>
+                  translation.text
+                    .toLowerCase()
+                    .search(findAyah.toLowerCase()) > -1,
+              )
+              .find(arabic => arabic.number === item.number),
+          ),
+    [findAyah, _surah],
+  );
 
   return (
     <SafeAreaView style={styles.containerSafeArea}>
+      <ModalAyahSearch
+        isOpen={searchModalVisible}
+        findAyah={_findAyah}
+        onChangeText={onChangeText}
+        onPressReset={onPressReset}
+        onPressSubmit={onPressSubmit}
+      />
+
       <View style={styles.container}>
         <View style={styles.topHeader}>
           <View style={styles.topHeaderNav}>
@@ -138,7 +191,7 @@ const SurahDetail = ({ route, navigation }) => {
             <Text style={styles.topHeaderTitle}>{surah?.englishName}</Text>
           </View>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => setSearchModalVisible(true)}>
             <Icon
               name="search-outline"
               size={styles?.icon?.size}
@@ -167,20 +220,27 @@ const SurahDetail = ({ route, navigation }) => {
           </View>
         </ImageBackground>
 
-        <FlatList
-          data={_surah?.arabic?.ayahs || []}
-          renderItem={renderItem}
-          onEndReached={() => {
-            if (surah.numberOfAyahs > initialPage.limit) {
-              setPage(prevState => prevState + 1);
-            }
-          }}
-          showsVerticalScrollIndicator={false}
-          refreshing={isLoading}
-          onRefresh={() => fetchData()}
-        />
-
-        {isLoading ? <ActivityIndicator size="large" /> : null}
+        {!_surah?.arabic?.ayahs && isLoading ? (
+          <Loader />
+        ) : (
+          <FlatList
+            data={filteredAyahs || []}
+            onEndReached={() => {
+              if (surah.numberOfAyahs > initialPage.limit) {
+                setPage(prevState => prevState + 1);
+              }
+            }}
+            onRefresh={() => {
+              if (surah.numberOfAyahs > initialPage.limit) {
+                set_Surah({});
+                fetchData();
+              }
+            }}
+            refreshing={isLoading}
+            renderItem={renderItem}
+            showsVerticalScrollIndicator={false}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
