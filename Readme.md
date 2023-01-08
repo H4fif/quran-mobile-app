@@ -9,8 +9,9 @@ API
 # FEATURES
 ## View Surahs
 - view list of surahs [DONE]
-- searchable surah in english and arabic [PENDING]
-- pagination / lazy load [PENDING]
+- searchable surah in english [DONE]
+- searchable surah in arabic [PENDING]
+- ~~pagination / lazy load [PENDING]~~
 
 ## View Juzs
 - view list of available juzs [DONE]
@@ -21,8 +22,8 @@ API
 - view list of ayahs [DONE]
 - playable audio stream [PENDING]
 - add to bookmark [PENDING]
-- searchable [PENDING]
-- pagination / lazy load [PENDING]
+- searchable (locally) [DONE]
+- pagination / lazy load [DONE]
 
 ## View prayer times [PENDING]
 - view with gps location detection
