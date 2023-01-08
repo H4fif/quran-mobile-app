@@ -83,31 +83,42 @@ const SurahDetail = ({ route, navigation }) => {
     [surah.number],
   );
 
-  const renderItem = ({ item: ayah }) => {
-    return (
-      <ListItem
-        key={`surah-detail-ayah-${ayah?.number}`}
-        ayah={ayah}
-        ayahTranslation={
-          _surah?.translation?.ayahs?.find(item => item.number === ayah?.number)
-            ?.text || '-'
-        }
-      />
-    );
-  };
+  const updateLastReadSurah = useCallback(
+    ayah =>
+      dispatch(
+        setLastReadSurah({
+          ayah: ayah,
+          name: surah.englishName,
+        }),
+      ),
+    [dispatch, surah],
+  );
+
+  const renderItem = useCallback(
+    ({ item: ayah }) => {
+      return (
+        <ListItem
+          key={`surah-detail-ayah-${ayah?.number}`}
+          ayah={ayah}
+          ayahTranslation={
+            _surah?.translation?.ayahs?.find(
+              item => item.number === ayah?.number,
+            )?.text || '-'
+          }
+          onPressIn={_ayah => updateLastReadSurah(_ayah)}
+        />
+      );
+    },
+    [_surah, updateLastReadSurah],
+  );
 
   useEffect(() => {
     fetchData(page);
 
     if (surah?.name) {
-      dispatch(
-        setLastReadSurah({
-          ayah: surah.numberOfAyahs,
-          name: surah.englishName,
-        }),
-      );
+      updateLastReadSurah(1);
     }
-  }, [dispatch, fetchData, page, surah]);
+  }, [dispatch, fetchData, page, surah, updateLastReadSurah]);
 
   return (
     <SafeAreaView style={styles.containerSafeArea}>
@@ -165,7 +176,8 @@ const SurahDetail = ({ route, navigation }) => {
             }
           }}
           showsVerticalScrollIndicator={false}
-          onPointerLeave={event => console.log('ON POINTER LEAVE', { event })}
+          refreshing={isLoading}
+          onRefresh={() => fetchData()}
         />
 
         {isLoading ? <ActivityIndicator size="large" /> : null}
