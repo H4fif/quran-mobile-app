@@ -51,6 +51,7 @@ const Juz = () => {
             <ListJuzItem data={data} juz={item} index={index} />
           )}
           refreshing={isLoading}
+          showsVerticalScrollIndicator={false}
         />
       )}
     </View>
