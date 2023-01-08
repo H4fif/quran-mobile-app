@@ -3,7 +3,8 @@ import { COLORS } from '../../constants';
 
 export default StyleSheet.create({
   backButton: {
-    marginRight: 24,
+    marginRight: 16,
+    padding: 8,
   },
   container: {
     flex: 1,

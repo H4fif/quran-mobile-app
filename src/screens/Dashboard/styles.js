@@ -58,7 +58,8 @@ export default StyleSheet.create({
     fontSize: 14,
   },
   menuButton: {
-    marginRight: 24,
+    marginRight: 16,
+    padding: 8,
   },
   searchIcon: {
     color: COLORS.primary,

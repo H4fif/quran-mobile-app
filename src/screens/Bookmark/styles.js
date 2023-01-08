@@ -15,7 +15,8 @@ export default StyleSheet.create({
     size: 24,
   },
   menuButton: {
-    marginRight: 24,
+    marginRight: 16,
+    padding: 8,
   },
   newCollectionButton: {
     flexDirection: 'row',
