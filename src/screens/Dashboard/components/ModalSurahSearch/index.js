@@ -10,7 +10,7 @@ const ModalSurahSearch = ({
   onPressSubmit,
 }) => {
   return (
-    <Modal visible={isOpen} animationType="none" transparent={true}>
+    <Modal visible={isOpen} animationType="slide" transparent={true}>
       <View style={styles.modalView}>
         <View style={styles.modalContent}>
           <View>
