@@ -1,2 +1,4 @@
-export const ListItem = require('./ListItem');
-export const ModalAyahSearch = require('./ModalAyahSearch');
+import ListItem from './ListItem';
+import ModalAyahSearch from './ModalAyahSearch';
+
+export { ListItem, ModalAyahSearch };
