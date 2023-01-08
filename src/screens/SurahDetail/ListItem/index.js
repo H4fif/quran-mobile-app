@@ -1,45 +1,58 @@
-import { Text, View } from 'react-native';
+import { Pressable, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import FIcon from 'react-native-vector-icons/Feather';
 import { COLORS } from '../../../constants';
 import styles from './styles';
 
-const ListItem = ({ ayah, ayahTranslation }) => {
+const ListItem = ({ ayah, ayahTranslation, onPressIn }) => {
   return (
     <View style={styles.itemWrapper}>
-      <View style={styles.itemControl}>
-        <View style={styles.numberWrapper}>
-          <Text style={styles.number}>{ayah?.numberInSurah}</Text>
+      <Pressable onPressIn={() => onPressIn(ayah?.numberInSurah)}>
+        <View style={styles.itemControl}>
+          <View style={styles.numberWrapper}>
+            <Text style={styles.number}>{ayah?.numberInSurah}</Text>
+          </View>
+
+          <View style={styles.rightControls}>
+            <TouchableOpacity>
+              <FIcon
+                name="share-2"
+                size={styles?.icon?.size}
+                color={COLORS.primary}
+                style={styles.rightControlItem}
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <FIcon
+                name="play"
+                size={styles?.icon?.size}
+                color={COLORS.primary}
+                style={styles.rightControlItem}
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <FIcon
+                name="bookmark"
+                size={styles?.icon?.size}
+                color={COLORS.primary}
+                style={styles.rightControlItem}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
 
-        <View style={styles.rightControls}>
-          <FIcon
-            name="share-2"
-            size={styles?.icon?.size}
-            color={COLORS.primary}
-            style={styles.rightControlItem}
-          />
+        <View>
+          <Text selectable={true} style={styles.ayah}>
+            {ayah?.text}
+          </Text>
 
-          <FIcon
-            name="play"
-            size={styles?.icon?.size}
-            color={COLORS.primary}
-            style={styles.rightControlItem}
-          />
-
-          <FIcon
-            name="bookmark"
-            size={styles?.icon?.size}
-            color={COLORS.primary}
-            style={styles.rightControlItem}
-          />
+          <Text selectable={true} style={styles.ayahTranslation}>
+            {ayahTranslation}
+          </Text>
         </View>
-      </View>
-
-      <View>
-        <Text style={styles.ayah}>{ayah?.text}</Text>
-        <Text style={styles.ayahTranslation}>{ayahTranslation}</Text>
-      </View>
+      </Pressable>
     </View>
   );
 };
