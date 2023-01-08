@@ -1,11 +1,12 @@
 import {
   ActivityIndicator,
   Alert,
-  ScrollView,
+  FlatList,
   StyleSheet,
   Text,
+  View,
 } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { COLORS, api } from '../../../../constants';
 import ListJuzItem from './components/ListJuzItem';
 
@@ -13,7 +14,7 @@ const Juz = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState(data);
 
-  useEffect(() => {
+  const fetchData = useCallback(() => {
     setIsLoading(true);
 
     api
@@ -31,23 +32,28 @@ const Juz = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <View style={styles.container}>
       {isLoading ? (
         <ActivityIndicator size="large" color={COLORS.primary} />
-      ) : data?.juzs?.references ? (
-        data?.juzs?.references?.map((item, index) => (
-          <ListJuzItem
-            key={`juz-number-${index}`}
-            data={data}
-            juz={item}
-            index={index}
-          />
-        ))
       ) : (
-        <Text style={styles.labelEmpty}>No data to display</Text>
+        <FlatList
+          data={data?.juzs?.references}
+          ListEmptyComponent={
+            <Text style={styles.labelEmpty}>No data to display</Text>
+          }
+          onRefresh={() => fetchData()}
+          renderItem={({ item, index }) => (
+            <ListJuzItem data={data} juz={item} index={index} />
+          )}
+          refreshing={isLoading}
+        />
       )}
-    </ScrollView>
+    </View>
   );
 };
 
@@ -56,6 +62,7 @@ export default Juz;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
+    flex: 1,
   },
   labelEmpty: {
     textAlign: 'center',
