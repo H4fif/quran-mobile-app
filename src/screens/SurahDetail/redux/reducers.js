@@ -4,3 +4,7 @@ export const setLastReadSurah = (state, action) => {
     name: action?.payload?.name,
   };
 };
+
+export const setFindAyah = (state, action) => {
+  state.findAyah = action.payload;
+};
