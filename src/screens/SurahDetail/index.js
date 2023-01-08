@@ -14,6 +14,8 @@ import FIcon from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ListItem from './ListItem';
 import styles from './styles';
+import { useDispatch } from 'react-redux';
+import { setLastReadSurah } from './redux/slice';
 
 const initialPage = {
   offset: 0,
@@ -21,6 +23,7 @@ const initialPage = {
 };
 
 const SurahDetail = ({ route, navigation }) => {
+  const dispatch = useDispatch();
   const { surah } = route.params;
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -95,7 +98,16 @@ const SurahDetail = ({ route, navigation }) => {
 
   useEffect(() => {
     fetchData(page);
-  }, [fetchData, page]);
+
+    if (surah?.name) {
+      dispatch(
+        setLastReadSurah({
+          ayah: surah.numberOfAyahs,
+          name: surah.englishName,
+        }),
+      );
+    }
+  }, [dispatch, fetchData, page, surah]);
 
   return (
     <SafeAreaView style={styles.containerSafeArea}>
@@ -153,7 +165,7 @@ const SurahDetail = ({ route, navigation }) => {
             }
           }}
           showsVerticalScrollIndicator={false}
-          StickyHeaderComponent={<Text>this is header</Text>}
+          onPointerLeave={event => console.log('ON POINTER LEAVE', { event })}
         />
 
         {isLoading ? <ActivityIndicator size="large" /> : null}
