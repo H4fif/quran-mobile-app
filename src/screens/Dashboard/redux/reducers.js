@@ -17,3 +17,7 @@ export const surahsRequestFailed = state => {
   state.loading = false;
   Alert.alert('Failed to get list of surahs, please try again later.');
 };
+
+export const setFindSurah = (state, action) => {
+  state.findSurah = action.payload;
+};

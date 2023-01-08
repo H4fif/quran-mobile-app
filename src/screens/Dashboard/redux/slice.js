@@ -16,6 +16,7 @@ export default dashboardSlice.reducer;
 
 export const {
   setSurahs,
+  setFindSurah,
   surahsReceived,
   surahsRequestFailed,
   surahsRequested,
