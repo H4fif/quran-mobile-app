@@ -5,16 +5,47 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FAIcon from 'react-native-vector-icons/FontAwesome5';
 import { COLORS, images } from '../../constants';
 import { Tabs } from './components';
 import styles from './styles';
+import { useDispatch } from 'react-redux';
+import { setFindSurah } from './redux/slice';
+import ModalSurahSearch from './components/ModalSurahSearch';
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+  const [searchModalVisible, setSearchModalVisible] = useState(false);
+  const [_findSurah, set_findSurah] = useState('');
+  const tabsMemo = useMemo(() => <Tabs />, []);
+
+  const onPressReset = () => {
+    setSearchModalVisible(false);
+    set_findSurah('');
+    dispatch(setFindSurah(''));
+  };
+
+  const onChangeText = text => {
+    set_findSurah(text);
+  };
+
+  const onPressSubmit = () => {
+    dispatch(setFindSurah(_findSurah));
+    setSearchModalVisible(false);
+  };
+
   return (
     <SafeAreaView style={styles.containerSafeArea}>
+      <ModalSurahSearch
+        isOpen={searchModalVisible}
+        findSurah={_findSurah}
+        onChangeText={onChangeText}
+        onPressReset={onPressReset}
+        onPressSubmit={onPressSubmit}
+      />
+
       <View style={styles.container}>
         <View style={styles.topHeader}>
           <View style={styles.topHeaderNav}>
@@ -25,7 +56,7 @@ const Dashboard = () => {
             <Text style={styles.topHeaderTitle}>Surah</Text>
           </View>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => setSearchModalVisible(true)}>
             <Icon name="search-outline" size={styles?.icon?.size} />
           </TouchableOpacity>
         </View>
@@ -58,7 +89,7 @@ const Dashboard = () => {
           </View>
         </View>
 
-        <Tabs />
+        {tabsMemo}
       </View>
     </SafeAreaView>
   );
