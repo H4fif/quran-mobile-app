@@ -11,12 +11,13 @@ import FAIcon from 'react-native-vector-icons/FontAwesome5';
 import { COLORS, images } from '../../constants';
 import { Tabs } from './components';
 import styles from './styles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFindSurah } from './redux/slice';
 import ModalSurahSearch from './components/ModalSurahSearch';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
+  const { lastReadSurah } = useSelector(state => state.surahDetail);
   const [searchModalVisible, setSearchModalVisible] = useState(false);
   const [_findSurah, set_findSurah] = useState('');
   const tabsMemo = useMemo(() => <Tabs />, []);
@@ -84,8 +85,14 @@ const Dashboard = () => {
               <Text style={styles.lastRead}>Last Read</Text>
             </View>
 
-            <Text style={styles.bannerSurahName}>Al-Fatihah</Text>
-            <Text style={styles.bannerSurahAyah}>Ayah No: 1</Text>
+            <Text style={styles.bannerSurahName}>
+              {lastReadSurah?.name ? lastReadSurah.name : 'No surah'}
+            </Text>
+            <Text style={styles.bannerSurahAyah}>
+              {lastReadSurah?.ayah
+                ? 'Ayah No: ' + lastReadSurah.ayah
+                : 'has been read'}
+            </Text>
           </View>
         </View>
 
