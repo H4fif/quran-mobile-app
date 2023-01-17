@@ -1,5 +1,5 @@
 import { Modal, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './styles';
 
 const ModalSurahSearch = ({
@@ -9,6 +9,12 @@ const ModalSurahSearch = ({
   onPressReset,
   onPressSubmit,
 }) => {
+  const inputSearchRef = useRef(null);
+
+  useEffect(() => {
+    isOpen && inputSearchRef.current.focus();
+  }, [isOpen]);
+
   return (
     <Modal visible={isOpen} animationType="slide" transparent={true}>
       <View style={styles.modalView}>
@@ -17,6 +23,7 @@ const ModalSurahSearch = ({
             <Text style={styles.modalLabel}>Filter surah name:</Text>
 
             <TextInput
+              ref={inputSearchRef}
               style={styles.modalInput}
               onChangeText={onChangeText}
               value={findSurah}
