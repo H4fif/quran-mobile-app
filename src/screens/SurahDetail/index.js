@@ -23,16 +23,18 @@ const initialPage = {
   limit: 10,
 };
 
+const initialStates = {
+  arabic: {},
+  translation: {},
+};
+
 const SurahDetail = ({ route, navigation }) => {
   const dispatch = useDispatch();
   const { findAyah } = useSelector(state => state.surahDetail);
   const { surah } = route.params;
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [_surah, set_Surah] = useState({
-    arabic: {},
-    translation: {},
-  });
+  const [_surah, set_Surah] = useState(initialStates);
   const [_findAyah, set_findAyah] = useState('');
   const [searchModalVisible, setSearchModalVisible] = useState(false);
 
@@ -58,18 +60,19 @@ const SurahDetail = ({ route, navigation }) => {
           const _data = response?.data?.data;
 
           set_Surah(prevState => ({
-            ...prevState,
             arabic: {
-              ...prevState?.arabic,
+              ...prevState.arabic,
               ayahs: [
-                ...(prevState?.arabic?.ayahs ? prevState.arabic.ayahs : []),
+                ...(prevState.arabic?.ayahs?.length
+                  ? prevState.arabic.ayahs
+                  : []),
                 ..._data[0].ayahs,
               ],
             },
             translation: {
-              ...prevState?.translation,
+              ...prevState.translation,
               ayahs: [
-                ...(prevState?.translation?.ayahs
+                ...(prevState.translation?.ayahs?.length
                   ? prevState.translation.ayahs
                   : []),
                 ..._data[1].ayahs,
@@ -116,10 +119,14 @@ const SurahDetail = ({ route, navigation }) => {
     [_surah, updateLastReadSurah],
   );
 
+  const resetFindStates = useCallback(() => {
+    dispatch(setFindAyah(''));
+    set_findAyah('');
+  }, [dispatch]);
+
   const onPressReset = () => {
     setSearchModalVisible(false);
-    set_findAyah('');
-    dispatch(setFindAyah(''));
+    resetFindStates();
   };
 
   const onChangeText = text => {
@@ -131,22 +138,9 @@ const SurahDetail = ({ route, navigation }) => {
     setSearchModalVisible(false);
   };
 
-  const resetFindStates = useCallback(() => {
-    dispatch(setFindAyah(''));
-    set_findAyah('');
-  }, [dispatch]);
-
   useEffect(() => {
     fetchData(page);
-
-    if (surah?.name) {
-      updateLastReadSurah(1);
-    }
-
-    return () => {
-      resetFindStates();
-    };
-  }, [dispatch, fetchData, page, surah, resetFindStates, updateLastReadSurah]);
+  }, [fetchData, page]);
 
   const filteredAyahs = useMemo(
     () =>
@@ -162,7 +156,7 @@ const SurahDetail = ({ route, navigation }) => {
               )
               .find(arabic => arabic.number === item.number),
           ),
-    [findAyah, _surah],
+    [findAyah, _surah?.arabic?.ayahs, _surah?.translation?.ayahs],
   );
 
   return (
@@ -232,8 +226,7 @@ const SurahDetail = ({ route, navigation }) => {
             }}
             onRefresh={() => {
               if (surah.numberOfAyahs > initialPage.limit) {
-                set_Surah({});
-                fetchData();
+                setPage(1);
               }
             }}
             refreshing={isLoading}
