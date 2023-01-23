@@ -14,4 +14,10 @@ export const surahDetailSlice = createSlice({
 
 export default surahDetailSlice.reducer;
 
-export const { setFindAyah, setLastReadSurah } = surahDetailSlice.actions;
+export const {
+  setFindAyah,
+  setLastReadSurah,
+  surahDetailReceived,
+  surahDetailRequestFailed,
+  surahDetailRequested,
+} = surahDetailSlice.actions;
