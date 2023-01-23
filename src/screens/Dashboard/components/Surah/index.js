@@ -13,7 +13,8 @@ import { loadSurahs } from '../../redux/api';
 
 const Surah = ({ navigation }) => {
   const dispatch = useDispatch();
-  const { findSurah, loading, surahs } = useSelector(state => state.dashboard);
+  const { findSurah, loading, surahs } =
+    useSelector(state => state.dashboard) || {};
 
   const onPressListItem = useCallback(
     surah => {
@@ -59,7 +60,7 @@ const Surah = ({ navigation }) => {
           ListEmptyComponent={
             <Text style={styles.labelEmpty}>No data to display</Text>
           }
-          refreshing={loading}
+          refreshing={loading || false}
           onRefresh={() => dispatch(loadSurahs())}
         />
       )}

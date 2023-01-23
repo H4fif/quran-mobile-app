@@ -17,7 +17,7 @@ import ModalSurahSearch from './components/ModalSurahSearch';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const { lastReadSurah } = useSelector(state => state.surahDetail);
+  const { lastReadSurah } = useSelector(state => state.surahDetail) || {};
   const [searchModalVisible, setSearchModalVisible] = useState(false);
   const [_findSurah, set_findSurah] = useState('');
   const tabsMemo = useMemo(() => <Tabs />, []);
