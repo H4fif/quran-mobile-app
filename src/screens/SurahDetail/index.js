@@ -1,93 +1,46 @@
 import {
-  Alert,
   FlatList,
   ImageBackground,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { COLORS, api, images } from '../../constants';
 import FIcon from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { ListItem } from './components';
-import styles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
+import { COLORS, images, initialPage } from '../../constants';
+import { loadSurahDetail } from './redux/api';
 import { setFindAyah, setLastReadSurah } from './redux/slice';
+import { ListItem } from './components';
 import ModalAyahSearch from './components/ModalAyahSearch';
 import { Loader } from '../../components';
-
-const initialPage = {
-  offset: 0,
-  limit: 10,
-};
-
-const initialStates = {
-  arabic: {},
-  translation: {},
-};
+import styles from './styles';
 
 const SurahDetail = ({ route, navigation }) => {
   const dispatch = useDispatch();
-  const { findAyah } = useSelector(state => state.surahDetail);
+
+  const { findAyah, loading, surahDetail } = useSelector(
+    state => state.surahDetail,
+  );
+
   const { surah } = route.params;
-  const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [_surah, set_Surah] = useState(initialStates);
   const [_findAyah, set_findAyah] = useState('');
   const [searchModalVisible, setSearchModalVisible] = useState(false);
 
-  const getPagination = _page => ({
-    limit: initialPage.limit,
-    offset: initialPage.limit * (_page - 1),
-  });
-
-  const fetchData = useCallback(
+  const fetchDataRedux = useCallback(
     (_page = 1) => {
-      setIsLoading(true);
-
-      api
-        .get(
-          `surah/${surah.number}/editions/quran-uthmani,id.indonesian?language=id`,
-          {
-            params: {
-              ...getPagination(_page),
-            },
-          },
-        )
-        .then(response => {
-          const _data = response?.data?.data;
-
-          set_Surah(prevState => ({
-            arabic: {
-              ...prevState.arabic,
-              ayahs: [
-                ...(prevState.arabic?.ayahs?.length
-                  ? prevState.arabic.ayahs
-                  : []),
-                ..._data[0].ayahs,
-              ],
-            },
-            translation: {
-              ...prevState.translation,
-              ayahs: [
-                ...(prevState.translation?.ayahs?.length
-                  ? prevState.translation.ayahs
-                  : []),
-                ..._data[1].ayahs,
-              ],
-            },
-          }));
-        })
-        .catch(error => {
-          Alert.alert(
-            'Failed to get ayah of the current surah, try again later.',
-          );
-        })
-        .finally(() => setIsLoading(false));
+      dispatch(
+        loadSurahDetail({
+          surahNumber: surah.number,
+          page: _page,
+        }),
+      );
     },
-    [surah.number],
+    [dispatch, surah.number],
   );
 
   const updateLastReadSurah = useCallback(
@@ -108,7 +61,7 @@ const SurahDetail = ({ route, navigation }) => {
           key={`surah-detail-ayah-${ayah?.number}`}
           ayah={ayah}
           ayahTranslation={
-            _surah?.translation?.ayahs?.find(
+            surahDetail?.translation?.ayahs?.find(
               item => item.number === ayah?.number,
             )?.text || '-'
           }
@@ -116,7 +69,7 @@ const SurahDetail = ({ route, navigation }) => {
         />
       );
     },
-    [_surah, updateLastReadSurah],
+    [surahDetail, updateLastReadSurah],
   );
 
   const resetFindStates = useCallback(() => {
@@ -139,15 +92,15 @@ const SurahDetail = ({ route, navigation }) => {
   };
 
   useEffect(() => {
-    fetchData(page);
-  }, [fetchData, page]);
+    fetchDataRedux(page, surahDetail);
+  }, [page]);
 
   const filteredAyahs = useMemo(
     () =>
       !findAyah?.length
-        ? _surah?.arabic?.ayahs
-        : _surah?.arabic?.ayahs?.filter(item =>
-            _surah?.translation?.ayahs
+        ? surahDetail?.arabic?.ayahs
+        : surahDetail?.arabic?.ayahs?.filter(item =>
+            surahDetail?.translation?.ayahs
               .filter(
                 translation =>
                   translation.text
@@ -156,7 +109,7 @@ const SurahDetail = ({ route, navigation }) => {
               )
               .find(arabic => arabic.number === item.number),
           ),
-    [findAyah, _surah?.arabic?.ayahs, _surah?.translation?.ayahs],
+    [findAyah, surahDetail?.arabic?.ayahs, surahDetail?.translation?.ayahs],
   );
 
   return (
@@ -214,7 +167,7 @@ const SurahDetail = ({ route, navigation }) => {
           </View>
         </ImageBackground>
 
-        {!_surah?.arabic?.ayahs && isLoading ? (
+        {!surahDetail?.arabic?.ayahs && loading ? (
           <Loader />
         ) : (
           <FlatList
@@ -229,7 +182,7 @@ const SurahDetail = ({ route, navigation }) => {
                 setPage(1);
               }
             }}
-            refreshing={isLoading}
+            refreshing={loading}
             renderItem={renderItem}
             showsVerticalScrollIndicator={false}
           />
