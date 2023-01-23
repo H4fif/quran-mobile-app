@@ -9,7 +9,8 @@ const api =
       return next(action);
     }
 
-    const { url, method, data, onStart, onSuccess, onError } = action.payload;
+    const { url, params, method, data, onStart, onSuccess, onError, ...rest } =
+      action.payload || {};
 
     if (onStart) {
       dispatch({ type: onStart });
@@ -23,12 +24,13 @@ const api =
         url,
         method,
         data,
+        params,
       });
 
-      dispatch(actions.apiCallSuccess(response.data));
+      dispatch(actions.apiCallSuccess({ ...response.data, ...rest }));
 
       if (onSuccess) {
-        dispatch({ type: onSuccess, payload: response.data });
+        dispatch({ type: onSuccess, payload: { ...response.data, ...rest } });
       }
     } catch (error) {
       dispatch(actions.apiCallFail(error.message));
