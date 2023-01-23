@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: 'https://api.alquran.cloud/v1/',
   headers: { Accept: 'application/json' },
 });
 
-export default api;
+export const initialPage = {
+  offset: 0,
+  limit: 10,
+};
