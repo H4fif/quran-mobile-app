@@ -21,3 +21,7 @@ export const surahsRequestFailed = state => {
 export const setFindSurah = (state, action) => {
   state.findSurah = action.payload;
 };
+
+export const skipHomeScreen = (state, action) => {
+  state.isSkipHomeScreen = action.payload;
+};

@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Bookmark, Dashboard, Dua, Home, Salat, SurahDetail } from '../screens';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomTabNavigator } from '../components';
+import { useSelector } from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,9 +22,11 @@ const MainApp = () => {
 };
 
 const Router = () => {
+  const { isSkipHomeScreen } = useSelector(state => state.dashboard) || {};
+
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName={isSkipHomeScreen ? 'MainApp' : 'Home'}
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="MainApp" component={MainApp} />
       <Stack.Screen name="Home" component={Home} />

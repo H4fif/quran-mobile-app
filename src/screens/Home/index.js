@@ -2,9 +2,16 @@ import { Image, Pressable, SafeAreaView, Text, View } from 'react-native';
 import React from 'react';
 import { images } from '../../constants';
 import styles from './styles';
+import { useDispatch } from 'react-redux';
+import { skipHomeScreen } from '../Dashboard/redux/slice';
 
 const Home = ({ navigation }) => {
-  const redirect = () => navigation.replace('MainApp');
+  const dispatch = useDispatch();
+
+  const redirect = () => {
+    dispatch(skipHomeScreen(true));
+    navigation.replace('MainApp');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
