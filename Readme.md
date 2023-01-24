@@ -40,3 +40,9 @@ API
 
 ## Final Result
 <img src="https://github.com/H4fif/quran-mobile-app/blob/development/examples/Simulator%20iOS%20iPhone%2013.gif" width="400" />
+
+## Downloads
+There are several files that you can download without the project folder
+- [APK](https://github.com/H4fif/quran-mobile-app/blob/development/examples/Al-Qur'an-Debug.apk)
+- [GIF preview](https://github.com/H4fif/quran-mobile-app/blob/development/examples/Simulator%20iOS%20iPhone%2013.gif)
+- [MP4 video preview](https://github.com/H4fif/quran-mobile-app/blob/development/examples/Simulator%20iOS%20iPhone%2013.mp4)
