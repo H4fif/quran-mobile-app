@@ -93,6 +93,7 @@ const SurahDetail = ({ route, navigation }) => {
 
   useEffect(() => {
     fetchDataRedux(page, surahDetail);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const filteredAyahs = useMemo(
