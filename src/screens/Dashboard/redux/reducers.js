@@ -9,8 +9,28 @@ export const surahsRequested = state => {
 };
 
 export const surahsReceived = (state, action) => {
-  state.surahs = action.payload?.data?.surahs;
-  state.loading = false;
+  try {
+    const surahs = { ...action.payload?.data?.surahs };
+    const juzs = { ...action.payload?.data?.juzs };
+
+    const juzDetails = juzs.references.map((juz, index) => {
+      const findSurah = surahs.references.find(
+        surah => surah.number === juz.surah,
+      );
+
+      return {
+        ...juz,
+        ...findSurah,
+        juz: index + 1,
+      };
+    });
+
+    state.loading = false;
+    state.surahs = { ...surahs };
+    state.juzs = { ...juzs, references: [...juzDetails] };
+  } catch (error) {
+    console.log({ error });
+  }
 };
 
 export const surahsRequestFailed = state => {
