@@ -13,7 +13,7 @@ export const loadSurahDetail = payload => dispatch => {
   return dispatch(
     apiCallStart({
       ...payload,
-      url: `surah/${surahNumber}/editions/quran-uthmani,id.indonesian?language=id`,
+      url: `surah/${surahNumber}/editions/quran-uthmani,en.asad`,
       params: {
         ...getPagination(page),
       },
