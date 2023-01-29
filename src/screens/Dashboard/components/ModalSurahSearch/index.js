@@ -20,7 +20,15 @@ const ModalSurahSearch = ({
       <View style={styles.modalView}>
         <View style={styles.modalContent}>
           <View>
-            <Text style={styles.modalLabel}>Filter surah name:</Text>
+            <Text style={styles.modalLabel}>Filter by :</Text>
+            <Text style={styles.modalListItem}>- Surah Name</Text>
+            <Text style={styles.modalListItem}>- Surah Number</Text>
+            <Text style={styles.modalListItem}>- Revelation</Text>
+            <Text style={styles.modalListItem}>- Total Verses</Text>
+            <Text style={styles.modalListItem}>- Juz Number</Text>
+            <Text style={styles.modalListItem}>
+              - The first verse of the juz
+            </Text>
 
             <TextInput
               ref={inputSearchRef}

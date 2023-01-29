@@ -15,7 +15,7 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    height: SIZES.height / 4,
+    height: SIZES.height / 3,
     width: SIZES.width / 2,
   },
   modalFooter: {
@@ -50,11 +50,17 @@ export default StyleSheet.create({
     borderRadius: SIZES.width * 0.025,
     borderWidth: 1,
     fontFamily: 'Poppins-Regular',
+    fontSize: 12,
     paddingVertical: 4,
+    paddingHorizontal: 4,
+    marginVertical: 16,
   },
   modalLabel: {
     fontFamily: 'Poppins-Bold',
-    marginBottom: 24,
+  },
+  modalListItem: {
+    fontFamily: 'Poppins',
+    fontSize: 12,
   },
   modalView: {
     alignItems: 'center',
