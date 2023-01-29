@@ -101,12 +101,19 @@ const SurahDetail = ({ route, navigation }) => {
         ? surahDetail?.arabic?.ayahs
         : surahDetail?.arabic?.ayahs?.filter(item =>
             surahDetail?.translation?.ayahs
-              .filter(
-                translation =>
-                  translation.text
-                    .toLowerCase()
-                    .search(findAyah.toLowerCase()) > -1,
-              )
+              .filter(translation => {
+                const keyword = findAyah?.toLowerCase?.()?.trim?.();
+
+                if (!isNaN(Number(keyword))) {
+                  return translation.number === Number(findAyah);
+                } else {
+                  return (
+                    translation.text
+                      .toLowerCase()
+                      .search(findAyah.toLowerCase()) > -1
+                  );
+                }
+              })
               .find(arabic => arabic.number === item.number),
           ),
     [findAyah, surahDetail?.arabic?.ayahs, surahDetail?.translation?.ayahs],
@@ -185,6 +192,7 @@ const SurahDetail = ({ route, navigation }) => {
             refreshing={loading}
             renderItem={renderItem}
             showsVerticalScrollIndicator={false}
+            ListEmptyComponent={<Text>No data to display</Text>}
           />
         )}
       </View>
