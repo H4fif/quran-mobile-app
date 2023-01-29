@@ -9,21 +9,35 @@ API
 # FEATURES
 ## View Surahs
 - view list of surahs *[DONE]*
-- searchable surah in english *[DONE]*
-- searchable surah in arabic *[PENDING]*
-- *~~pagination / lazy load [PENDING]~~ api does not support pagination*
+- filter surah by:
+  - surah name in english *[DONE]*
+  - surah name in arabic *[DONE]*
+  - surah name from english translation *[DONE]*
+  - surah number *[DONE]*
+  - total verse *[DONE]*
+  - revelation type *[DONE]*
 
 ## View Juzs
 - view list of available juzs *[DONE]*
-- searchable *[PENDING]*
 - view in ayahs / surah detail *[PENDING]*
+- filter juz by:
+  - surah name in english *[DONE]*
+  - surah name in arabic *[DONE]*
+  - surah name from english translation *[DONE]*
+  - surah number *[DONE]*
+  - total verse *[DONE]*
+  - revelation type *[DONE]*
+  - juz number *[DONE]*
+  - the beginning of the verse on the juz *[DONE]*
 
 ## View Ayahs per Surah with translation
 - view list of ayahs *[DONE]*
+- filter (local):
+  - by translation *[DONE]*
+  - by ayah number *[DONE]*
+- pagination / lazy load *[DONE]*
 - playable audio stream *[PENDING]*
 - add to bookmark *[PENDING]*
-- searchable (locally) *[DONE]*
-- pagination / lazy load *[DONE]*
 
 ## View prayer times
 - view with gps location detection *[PENDING]*
@@ -31,7 +45,7 @@ API
 ## Manage bookmarks collection
 - View saved collections of bookmarks *[PENDING]*
 - Sort *[PENDING]*
-- Searchable *[PENDING]*
+- Filter list *[PENDING]*
 - Deep link *[PENDING]*
 - Delete Bookmark *[PENDING]*
 - Delete Collection *[PENDING]*
