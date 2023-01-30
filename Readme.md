@@ -1,8 +1,15 @@
+# UI/UX Design
+## Template
+https://www.figma.com/community/file/966921639679380402
+
+## Credits to
+https://www.figma.com/@tanvirux
+
 # STACKS
 Android / iOS
 - React Native
 
-API
+# API
 - [Quran API](https://alquran.cloud/api)
 - [Adhan API](https://aladhan.com/prayer-times-api)
 
