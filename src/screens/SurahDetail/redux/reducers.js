@@ -20,8 +20,11 @@ export const surahDetailReceived = (state, action) => {
   let _newSurah = { ...state.surahDetail };
   const { payload } = action || {};
   const { data, page } = payload || {};
+  const isNextPage = page === state.currentPage + 1;
+  const isPreviousPage = page === state.currentPage - 1;
+  state.currentPage = page;
 
-  if (page === 1) {
+  if (page === 1 || (!isNextPage && !isPreviousPage)) {
     _newSurah = {
       arabic: data[0],
       translation: data[1],

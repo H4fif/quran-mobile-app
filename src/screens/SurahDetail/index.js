@@ -22,12 +22,15 @@ import styles from './styles';
 const SurahDetail = ({ route, navigation }) => {
   const dispatch = useDispatch();
 
-  const { findAyah, loading, surahDetail } = useSelector(
+  const { findAyah, loading, surahDetail, currentPage } = useSelector(
     state => state.surahDetail,
   );
 
-  const { surah } = route.params;
-  const [page, setPage] = useState(1);
+  const { surah, ayah } = route.params || {};
+  const [page, setPage] = useState(
+    !ayah ? 1 : Math.floor((ayah - 1) / initialPage.limit) + 1,
+  );
+
   const [_findAyah, set_findAyah] = useState('');
   const [searchModalVisible, setSearchModalVisible] = useState(false);
 
@@ -37,17 +40,19 @@ const SurahDetail = ({ route, navigation }) => {
         loadSurahDetail({
           surahNumber: surah.number,
           page: _page,
+          ayah,
+          currentPage,
         }),
       );
     },
-    [dispatch, surah.number],
+    [ayah, surah.number, dispatch, currentPage],
   );
 
   const updateLastReadSurah = useCallback(
-    ayah =>
+    _ayah =>
       dispatch(
         setLastReadSurah({
-          ayah: ayah,
+          ayah: _ayah,
           name: surah.englishName,
         }),
       ),
@@ -91,10 +96,31 @@ const SurahDetail = ({ route, navigation }) => {
     setSearchModalVisible(false);
   };
 
+  const onEndReached = () => {
+    if (surah.numberOfAyahs > initialPage.limit) {
+      setPage(prevState => prevState + 1);
+      // changePage(currentPage + 1);
+    }
+  };
+
+  const onRefresh = () => {
+    if (surah.numberOfAyahs > initialPage.limit) {
+      setPage(1);
+      // changePage(1);
+    }
+  };
+
   useEffect(() => {
-    fetchDataRedux(page, surahDetail);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page]);
+    // changePage(page);
+    updateLastReadSurah(1);
+    fetchDataRedux(page);
+  }, [page, fetchDataRedux, updateLastReadSurah]);
+
+  // useEffect(() => {
+  //   if (currentPage) {
+  //     fetchDataRedux(currentPage);
+  //   }
+  // }, [currentPage, fetchDataRedux]);
 
   const filteredAyahs = useMemo(
     () =>
@@ -119,6 +145,8 @@ const SurahDetail = ({ route, navigation }) => {
           ),
     [findAyah, surahDetail?.arabic?.ayahs, surahDetail?.translation?.ayahs],
   );
+
+  // console.log({ currentPage });
 
   return (
     <SafeAreaView style={styles.containerSafeArea}>
@@ -180,16 +208,8 @@ const SurahDetail = ({ route, navigation }) => {
         ) : (
           <FlatList
             data={filteredAyahs || []}
-            onEndReached={() => {
-              if (surah.numberOfAyahs > initialPage.limit) {
-                setPage(prevState => prevState + 1);
-              }
-            }}
-            onRefresh={() => {
-              if (surah.numberOfAyahs > initialPage.limit) {
-                setPage(1);
-              }
-            }}
+            onEndReached={onEndReached}
+            onRefresh={onRefresh}
             refreshing={loading}
             renderItem={renderItem}
             showsVerticalScrollIndicator={false}

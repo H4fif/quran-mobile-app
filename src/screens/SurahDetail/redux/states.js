@@ -6,4 +6,5 @@ export const surahDetailStates = {
     translation: {},
   },
   loading: false,
+  currentPage: null,
 };
