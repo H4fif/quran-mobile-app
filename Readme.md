@@ -1,9 +1,6 @@
 # UI/UX Design
-## Template
+Inspired by
 https://www.figma.com/community/file/966921639679380402
-
-## Credits to
-https://www.figma.com/@tanvirux
 
 # STACKS
 Android / iOS
