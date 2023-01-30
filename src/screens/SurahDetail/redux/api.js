@@ -1,3 +1,4 @@
+import { initialPage } from '../../../constants';
 import { apiCallStart } from '../../../store/api';
 import { getPagination } from '../../../utils';
 
@@ -8,7 +9,7 @@ import {
 } from './slice';
 
 export const loadSurahDetail = payload => dispatch => {
-  const { page, surahNumber } = payload || {};
+  const { page, surahNumber, ayah } = payload || {};
 
   return dispatch(
     apiCallStart({
@@ -16,6 +17,7 @@ export const loadSurahDetail = payload => dispatch => {
       url: `surah/${surahNumber}/editions/quran-uthmani,en.asad`,
       params: {
         ...getPagination(page),
+        offset: ayah ? ayah - 1 : initialPage.limit * (page - 1),
       },
       onStart: surahDetailRequested.type,
       onSuccess: surahDetailReceived.type,
