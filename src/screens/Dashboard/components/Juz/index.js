@@ -12,12 +12,35 @@ import ListJuzItem from './components/ListJuzItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadSurahs } from '../../redux/api';
 import { useMemo } from 'react';
+import { useCallback } from 'react';
 
-const Juz = () => {
+const Juz = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const { findSurah, loading, juzs } =
     useSelector(state => state.dashboard) || {};
+
+  const onPressListItem = useCallback(
+    juz => {
+      navigation.navigate('SurahDetail', {
+        surah: juz,
+        ayah: juz.ayah,
+      });
+    },
+    [navigation],
+  );
+
+  const renderItem = useCallback(
+    ({ item }) => (
+      <ListJuzItem
+        data={dataMemo}
+        juz={item}
+        onPressListItem={() => onPressListItem(item)}
+      />
+    ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [findSurah],
+  );
 
   const dataMemo = useMemo(() => {
     if (!findSurah?.length) {
@@ -76,7 +99,7 @@ const Juz = () => {
             </Text>
           }
           onRefresh={() => dispatch(loadSurahs())}
-          renderItem={({ item }) => <ListJuzItem data={dataMemo} juz={item} />}
+          renderItem={renderItem}
           refreshing={loading}
           showsVerticalScrollIndicator={false}
         />
